@@ -222,101 +222,24 @@
          <div class="row justify-content-between pb-50" style="margin-top: -10px;">
 
 
-            <div class="col-lg-5">
-                <div class="col-lg-3.5">
-                    <h2 class="title-script">Today's Match</h2>
-                    <div class="course-card-data" data-aos="fade-up" data-aos-duration="1200">
-                        
-                        <div class="row">
-                            <!-- <img id="img" src="assets/images/IPL/oct2.png"/> -->
-                            
-                            <script type="text/javascript">
-                                var imlocation = "assets/images/IPL/";
-                                 function ImageArray (n) {
-                                   this.length = n;
-                                   for (var i =1; i <= n; i++) {
-                                     this[i] = ' '
-                                   }
-                                 }
-                                image = new ImageArray(7);
-                                image[0] = 'nov6.png';
-                                image[1] = 'nov2.png';
-                                image[2] = 'nov3.png';
-                                image[3] = 'nov4.png';
-                                image[4] = 'nov4.png';
-                                image[5] = 'nov6.png';
-                                image[6] = 'nov6.png';
-                              
-                                
-                                var currentdate = new Date();
-                                var imagenumber = currentdate.getDay();
-                                document.write('<img src="' + imlocation + image[imagenumber] + '">');
-                                </script>
-
-
-
-
-                            <!-- <div class="col-lg-4">
-                                <img src="assets/images/mpl/rcb.png" style="height: 80px;width: 100px;"/>
-                                <center><p style="font-weight: bold;margin-left: -17px;font-size: 20px;">RCB</p></center>
-                            </div>
-                            <div class="col-lg-4" style="padding-top: 20px;">
-                              <center>  <p  style="color: red;font-weight: bold;">Ends In</p></center>
-                              <center> <p id="demo" class="p1" style="color: red;font-weight: bold;"></p></center>
-                            <script>
-                                // Set the date we're counting down to
-                                var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-                                
-                                // Update the count down every 1 second
-                                var x = setInterval(function() {
-                                
-                                  // Get today's date and time
-                                  var now = new Date().getTime();
-                                
-                                  // Find the distance between now and the count down date
-                                  var distance = countDownDate - now;
-                                
-                                  // Time calculations for days, hours, minutes and seconds
-                                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                                
-                                  // Display the result in the element with id="demo"
-                                  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                                  + minutes + "m " + seconds + "s ";
-                                
-                                  // If the count down is finished, write some text
-                                  if (distance < 0) {
-                                    clearInterval(x);
-                                    document.getElementById("demo").innerHTML = "EXPIRED";
-                                  }
-                                }, 1000);
-                                </script>
-                                </div>
-                            <div class="col-lg-4">
-                               
-                                <img src="assets/images/mpl/csk.png" style="height: 80px;width: 100px;float: right;"/>
-                                 <center><p style="font-weight: bold;margin-left: 30px;font-size: 20px;margin-top: -10px;">CSK</p></center>
-                            </div> -->
+        
+                    <div class="col-lg-5">
+                        <div class="col-lg-3.5">
+                            <h2 class="title-script">Career scholarship - 2021</h2>
+                            <h3 class="title-script">Who is eligible for the scholarship? | ವಿದ್ಯಾರ್ಥಿವೇತನಕ್ಕೆ ಯಾರು ಅರ್ಹರು?</h3>
+                            <h3 class="section-title">What is the purpose of this scholarship? | 
+                                ಈ ವಿದ್ಯಾರ್ಥಿವೇತನದ ಉದ್ದೇಶವೇನು?</h3>
+                                <h3 class="section-title">What are the selection criteria? | ಆಯ್ಕೆ ಮಾನದಂಡಗಳು ಯಾವುವು?</h3>
                         </div>
-                    </div>
-                </div>
-            <div class="mobileHide">
-                 <div class="section-header style-seven services-left" data-aos="fade-zoom-in"
-                     data-aos-duration="1000" >
-                      
-                     <h2 class="section-title">Criteria</h2>
-                     <div class="section-lead">
-                       <ul>
-                           <li>Select your favorite premium course</li>
-                           <li>Make your predictions</li>
-                           <li>Get paid course for free</li>
-                           <li>Answers are only valid before 7:30</li>
-                       </ul>
+<!--                   
+                         <div class="section-header style-seven services-left" data-aos="fade-zoom-in"
+                             data-aos-duration="1000" >
+                              
+                             
+                             
+                         </div> -->
+                     
                      </div>
-                 </div>
-                </div>
              </div>
 
 
@@ -348,7 +271,7 @@
                     </div>
                     <div class="form-group selectCourse">
            
-                        <label for="cars2">Your Favorite Premium Course *</label>
+                        <label for="cars2">Select Your Premium Course *</label>
                         <select name="cars2" id="cars2" class="form-control form-control-lg">
                           <option value="volvo">Select a course</option>
                           
@@ -361,7 +284,7 @@
                           <option value="sql">MySQL</option>
                         </select>
                     </div>
-                       <div class="form-group selectCourse">
+                       <!-- <div class="form-group selectCourse">
            
                            <label for="cars1">Winning Team? *</label>
                            <select name="cars1" id="cars1" class="form-control form-control-lg">
@@ -403,14 +326,14 @@
                         <label for="manofthematchInputLabel">Man of the match ? *</label>
                         <input type="text" class="form-control form-control-lg" id="manofthematchInputLabel" aria-describedby="nameHelp"
                             name="manoftheMatch" placeholder="" required style="margin-top: -8px;">
-                    </div>
+                    </div> -->
                       
                
                
                
-                       <button type="submit" class="button button3 enrollSubmitButton" onsubmit="myFunction()">Play</button>
+                       <button type="submit" class="button button3 enrollSubmitButton" onsubmit="myFunction()">Submit</button>
                
-                       <div class="section-lead">*Share your details so that we can guide you through the course structure.</div>
+                       <!-- <div class="section-lead">*Share your details so that we can guide you through the course structure.</div> -->
                        <!-- <div class="section-lead">You can confirm your spot by paying just ₹1000 in the next page</div> -->
                
                    </form>
@@ -418,21 +341,20 @@
                    </div>
                 </div>
             </div>
-            <div class="mobileShow">
+            <!-- <div class="mobileShow">
                 <div class="section-header style-seven services-left" data-aos="fade-zoom-in"
                     data-aos-duration="1000" style="margin-top: 20px;" >
                      
                     <center><h2 class="section-title">Criteria</h2></center>
-                    <div class="section-lead">
-                      <ul>
-                          <li>Select your favorite premium course</li>
-                          <li>Make your predictions</li>
-                          <li>Get paid course for free</li>
-                          <li>Answers are only valid before 7:30</li>
-                      </ul>
-                    </div>
+                    <div class="section-header style-seven services-left" data-aos="fade-zoom-in"
+                    data-aos-duration="1000" >
+                     
+                    <h3 class="section-title">What is the purpose of this scholarship? | 
+                       ಈ ವಿದ್ಯಾರ್ಥಿವೇತನದ ಉದ್ದೇಶವೇನು?</h3>
+                    
                 </div>
-               </div>
+                </div>
+               </div> -->
 
              
          </div>

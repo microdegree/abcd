@@ -277,6 +277,37 @@ div.transbox1 {
   width: 100%;
   height: 190px;
 }
+div.backgroundscholar1 {
+  background: url(assets/images/about/a7.jpg) repeat;
+  border: 1px solid #5c5fa0;
+  width: 100%;
+  
+}
+
+div.backgroundscholar {
+  background: url(assets/images/about/a6.jpg) repeat;
+  border: 1px solid #000A19;
+  width: 100%;
+  height: 300px;
+}
+
+div.transboxscholar {
+ 
+  background-color: #000A19;
+  border: 1px solid #000A19;
+  opacity: 0.9;
+  width: 100%;
+  height: 300px;
+}
+
+div.transboxscholar1 {
+ 
+  background-color: #000A19;
+  border: 1px solid #000A19;
+  opacity: 0.9;
+  width: 100%;
+  height: 190px;
+}
 div.backgroundmpl1 {
   
   border: 1px solid #5c5fa0;

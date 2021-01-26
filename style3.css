@@ -278,17 +278,22 @@ div.transbox1 {
   height: 190px;
 }
 div.backgroundscholar1 {
-  background: url(assets/images/about/scholar.jpg) repeat;
-  border: 1px solid #000a1900;
-  width: 100%;
-  height: 320px;
+ 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2020/09/14082614/software-developer-1024x512.png");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 div.backgroundscholar {
-  background: url(assets/images/about/scholar.jpg) repeat;
-  border: 1px solid #000a1900;
-  width: 100%;
-  height: 370px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2020/09/14082614/software-developer-1024x512.png");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 div.transboxscholar {

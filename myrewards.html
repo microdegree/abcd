@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <div id="container">
+
+      <div id="title_container">
+        <span id="content">
+          <h2 class="typedtext"></h2>
+        </span>
+        
+      </div>
+
+      <div id="form_container">
+     
+        <input placeholder="Username" type="name" id="username"/>
+        <input placeholder="Say Something" type="text" id="say_something"/>
+    
+      </div>
+
+      <div id="button_container">
+        <button id="submit" onclick="save()"> SUBMIT </button>
+      </div>
+
+    </div>
+  </body>
+
+  <style>
+    /* https://coolors.co/003049-d62828-f77f00-fcbf49-eae2b7 */
+    html, body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container {
+      width: 35%;
+      height: 400px;
+
+      background-color: #fff;
+      border-radius: 10px;
+      outline: 1px solid #fff;
+      outline-offset: 3px;
+      -moz-outline-radius: 10px;
+
+    }
+
+    #title_container {
+      width: 100%;
+      height: 5%;
+
+      text-align: center;
+      float: left;
+      margin: 0;
+
+      color: #003049;
+      text-transform: uppercase;
+      font-family: Verdana;
+      font-size: 12px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      color: #003049;
+    }
+
+
+    #form_container {
+      width: 100%;
+      height: 20%;
+
+      float: left;
+      margin-top: 2px;
+      padding-left: 100px;
+      padding-right: 100px;
+
+      box-sizing: border-box;
+    }
+
+    #form_container * {
+      width: 100%;
+      height: 30px;
+
+      border: none;
+      outline: none;
+      border-left: 2px solid #003049;
+      background-color: #EBF8FF;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+
+      margin-top: 3px;
+      float: left;
+
+    }
+
+    #button_container {
+      width: 100%;
+     
+
+      text-align: center;
+      float: left;
+      margin-bottom: 10px;
+
+      font-family: Verdana;
+
+    }
+
+    #submit {
+      width: 25%;
+      height: 35px;
+
+      background-color: #D62828;
+      border-radius: 5px;
+      font-weight: bold;
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+
+    #content {
+      width: 105px;
+      height: 100%;
+
+      margin: 0;
+      padding: 0;
+      float: left;
+
+      color: #D62828;
+      margin-right: 5px;
+    }
+
+    .typedtext {
+      display: inline-block;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #D62828;
+
+    }
+
+
+  </style>
+ 
+
+
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+
+<script>
+   // Your web app's Firebase configuration
+ var firebaseConfig = {
+    apiKey: "AIzaSyBZCnQfYuqE_UDnCaJNII1s6qdVPN5hmic",
+    authDomain: "wrud-607ec.firebaseapp.com",
+    projectId: "wrud-607ec",
+    storageBucket: "wrud-607ec.appspot.com",
+    messagingSenderId: "770545748723",
+    appId: "1:770545748723:web:4a435d84f74551d0f60586"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+// Set database variable
+var database = firebase.database()
+
+function save() {
+
+  var username = document.getElementById('username').value
+  var say_something = document.getElementById('say_something').value
+ 
+
+  database.ref('users/' + username).set({
+    username : username,
+    say_something : say_something,
+  
+  })
+
+  alert('Saved')
+}
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var username = getUrlParameter('email');
+
+
+     document.getElementById('username').value = username;
+
+function get() {
+
+ 
+
+    
+  var username = document.getElementById('username').value
+
+  var user_ref = database.ref('users/' + username)
+  user_ref.on('value', function(snapshot) {
+    var data = snapshot.val()
+
+    alert(data.say_something)
+
+  })
+
+}
+
+</script>
+
+</html>

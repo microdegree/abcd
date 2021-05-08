@@ -207,7 +207,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 var username = getUrlParameter('email');
-
+username = username.replace(/\./g,'')
 
      document.getElementById('username').value = username;
 

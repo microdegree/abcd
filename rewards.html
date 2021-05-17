@@ -1,235 +1,640 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
+<html lang="zxx">
 
-  </head>
-  <body>
-    <div id="container">
-
-      <div id="title_container">
-        <span id="content">
-          <h2 class="typedtext"></h2>
-        </span>
-        
-      </div>
-
-      <div id="form_container">
-     
-        <input placeholder="Username" type="name" id="username"/>
-        <!-- <input placeholder="Say Something" type="text" id="say_something"/> -->
-    
-      </div>
-
-      <div id="button_container">
-        <button id="submit" onclick="get()"> SUBMIT </button>
-      </div>
-
-    </div>
-  </body>
-
-  <style>
-    /* https://coolors.co/003049-d62828-f77f00-fcbf49-eae2b7 */
-    html, body {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #container {
-      width: 35%;
-      height: 400px;
-
-      background-color: #fff;
-      border-radius: 10px;
-      outline: 1px solid #fff;
-      outline-offset: 3px;
-      -moz-outline-radius: 10px;
-
-    }
-
-    #title_container {
-      width: 100%;
-      height: 5%;
-
-      text-align: center;
-      float: left;
-      margin: 0;
-
-      color: #003049;
-      text-transform: uppercase;
-      font-family: Verdana;
-      font-size: 12px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 50px;
-      margin-bottom: 50px;
-
-      color: #003049;
-    }
-
-
-    #form_container {
-      width: 100%;
-      height: 20%;
-
-      float: left;
-      margin-top: 2px;
-      padding-left: 100px;
-      padding-right: 100px;
-
-      box-sizing: border-box;
-    }
-
-    #form_container * {
-      width: 100%;
-      height: 30px;
-
-      border: none;
-      outline: none;
-      border-left: 2px solid #003049;
-      background-color: #EBF8FF;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-
-      margin-top: 3px;
-      float: left;
-
-    }
-
-    #button_container {
-      width: 100%;
-     
-
-      text-align: center;
-      float: left;
-      margin-bottom: 10px;
-
-      font-family: Verdana;
-
-    }
-
-    #submit {
-      width: 25%;
-      height: 35px;
-
-      background-color: #D62828;
-      border-radius: 5px;
-      font-weight: bold;
-      color: #fff;
-      border: none;
-      outline: none;
-      cursor: pointer;
-    }
-
-
-    #content {
-      width: 105px;
-      height: 100%;
-
-      margin: 0;
-      padding: 0;
-      float: left;
-
-      color: #D62828;
-      margin-right: 5px;
-    }
-
-    .typedtext {
-      display: inline-block;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-bottom: 5px;
-      border-bottom: 2px solid #D62828;
-
-    }
-
-
-  </style>
- 
-
-
-<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
-
-<script>
-   // Your web app's Firebase configuration
- var firebaseConfig = {
-    apiKey: "AIzaSyBZCnQfYuqE_UDnCaJNII1s6qdVPN5hmic",
-    authDomain: "wrud-607ec.firebaseapp.com",
-    projectId: "wrud-607ec",
-    storageBucket: "wrud-607ec.appspot.com",
-    messagingSenderId: "770545748723",
-    appId: "1:770545748723:web:4a435d84f74551d0f60586"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+<head>
+    <script>(function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"state")&&(j=JSON.parse(decodeURIComponent(d(f,"state"))),"mpeditor"===j.action&&(b.sessionStorage.setItem("_mpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.mixpanel=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
+        0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="mixpanel";e.people=e.people||[];e.toString=function(b){var a="mixpanel";"mixpanel"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+        for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(c){b[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.2;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+        MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);
+        mixpanel.init("69307b503631fcaa333e3b3981739c51", {batch_requests: true})</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
   
-// Set database variable
-var database = firebase.database()
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-function save() {
+    gtag('config', 'UA-155317684-1');
+    </script>
 
-  var username = document.getElementById('username').value
-  var say_something = document.getElementById('say_something').value
- 
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KD29V9Z');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+        new Crate({
+            server: '722319370759569428',
+            channel: '723435400802074666',
+            location: ['bottom', 'right']
+        })
 
-  database.ref('users/' + username).set({
-    username : username,
-    say_something : say_something,
-  
-  })
+        crate.notify('Join our developer community here')
+        //crate.notify('Personalized support ? Enrol now')
 
-  alert('Saved')
-}
-
-var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : sParameterName[1];
+    </script>
+ <meta name="description" content="Learn coding and job-ready skills in Kannada">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Page Title -->
+    <title>Micro Degree</title>
+        <meta name="description"
+         content="Courses include languages such as C, C++, Java up until emerging technologies such as Machine Learning, Data Science etc,
+         Learn Emerging Technology such as Machine Learning, Data Science in Kannada at an affordable price.,Emerging technologies in Kannada
+        ">
+       <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://www.microdegree.work/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://query.microdegree.work/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
         }
-    }
-};
+        </script>
+    <!---Font Icon-->
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icon.css">
 
-var username = getUrlParameter('email');
-username = username.replace(/\./g,'')
+    <!-- Place/logo-icon.png in the root directory -->
+    <link rel="shortcut icon" href="assets/images/logo-icon.png">
 
-     document.getElementById('username').value = username;
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet"  href="util.css">
 
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="review.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"><link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <meta name="google-signin-client_id"
+        content="265409935246-3jn1do8pg9iq6tdan0etuklanemdrqvk.apps.googleusercontent.com"
+        >
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'><link rel="stylesheet" href="./style4.css">
+        
+        <link rel="preconnect" href="https://embed.tawk.to">
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+        <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+        <link rel="preconnect" href="https://www.googletagmanager.com">
+        <link rel="preconnect" href="https://static.doubleclick.net">
+        <link rel="preconnect" href="https://yt3.ggpht.com">
+        <link rel="preconnect" href="https://i.ytimg.com">
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700'><link rel="stylesheet" href="./style.css">
+        <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="styles.css"></noscript>
 
+    <style>
+        .p {
+          text-align: center;
+          font-size: 60px;
+          margin-top: 0px;
+         
+        }
+        </style>
+</head>
 
-function get() {
+<body class="home-agency">
 
- 
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KD29V9Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Site Header -->
+    <header class="site-header header-style-five">
+     
+
+       
+    
+        <nav class="site-navigation">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-lg navigation-area">
+                            <div class="site-logo-block">
+                                <a class="navbar-brand site-logo" href="index.html">
+                                    <img type="image/jpeg" src="assets/images/logo/microdegreelogo.png" alt="logo" style="height: 50px;width: 200px;">
+                                </a>
+<!-- 
+                                <a class="navbar-brand site-logo" href="https://www.100x.vc/">
+                                  <img type="image/jpeg" src="assets/images/logo/xvc.png" alt="logo" style="height: 30px;width: 95px;padding-left: 1px;">
+                              </a> -->
+                            </div><!-- end site logo block -->
+                            <div class="mainmenu-wrap">
+                                <nav class="menu">
+                                    <ul id="nav">
+                                        <!-- <li><a class="active" href="#home">Home</a></li> -->
+
+                         
+                                        <div class="mobileHide">
+                                            <li><h2><a href="https://courses.microdegree.work/pages/premium-courses" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Courses &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h2></li>
+                                            <li><h2><a href="/review.html" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Reviews &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h2></li>
+                                            <li><h2><a href="https://www.microdegree.work/scholarship.html" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Scholarship &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h2></li>
+                                            <li><h3><a href="https://blog.microdegree.work/" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Blog &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h3></li>
+                                            <li><h3><a href="https://t.me/microdegreekannada" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Community &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h3></li>
+                                            <!-- <li><a href="#blog">Blog</a></li> -->
+                                       
+                                            <li><h3><a href="tel:+91 83108 82795" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">+91 83108 82795 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h3></li>
+                                            <li><h3><a href="https://courses.microdegree.work/users/sign_up" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Sign Up</a></h3></li>
+                                            &nbsp;&nbsp;&nbsp; <li><a class="btn btn-primarypurple btn-gradientpurple" href="https://courses.microdegree.work/users/sign_in" style="font-family: Nunito Sans; font-size: 14px;text-transform: capitalize;">Login</a></li></div> 
+                                        <div class="mobileShow"> 
+                                            <li><a href="https://courses.microdegree.work/pages/premium-courses" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Courses</a></li>
+                                            <li><h2><a href="/review.html" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Reviews</a></h2></li>
+                                            <li><a href="https://www.microdegree.work/scholarship.html" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Scholarship</a></li>
+                                            <li><a href="https://blog.microdegree.work/" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Blog</a></li>
+                                            <li><a href="https://t.me/microdegreekannada" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">Community </a></li>
+                                            <!-- <li><a href="#blog">Blog</a></li> -->
+                                       
+                                            <li><a href="tel:+91 83108 82795" style="color: #062A42;font-family: Nunito Sans; font-size: 14px;">+91 83108 82795 </a></li>
+                                             <li><a  href="https://courses.microdegree.work/users/sign_up" style="font-family: Nunito Sans; font-size: 14px;text-transform: capitalize;">Sign Up</a></li>
+                                            <li><a class="btn btn-primary btn-gradient" href="https://courses.microdegree.work/users/sign_in" style="font-family: Nunito Sans; font-size: 14px;text-transform: capitalize;">Login</a></li></div>
+                                            </ul>
+                                </nav>
+                                <!--/.menu-->
+                            </div><!-- end mainmenu wrap -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </nav><!-- end site navigation -->
+
+        <!-- Start Mobile Menu -->
+        <div class="mobile-menu">
+          <a class="mobile-logo" href="index.html">
+              <img type="image/jpeg" src="assets/images/logo/MicroDegree.png" alt="logo" style="padding: 12px;height: 46px;width: 150px;margin-top: 10px;">
+              
+          </a>
+          <!-- <a class="mobile-logo" href="https://www.100x.vc/">
+              <img type="image/jpeg" src="assets/images/logo/xvc.png" alt="logo" style="padding-top: 12px;height: 43px;width: 56px;margin-top: 12px;padding-bottom: 12px;margin-left: 150px;">
+          </a> -->
+      </div><!-- end mobile menu -->
+    </header>
+
+    <!-- Sticky Header -->
+    <div id="sticky-header"></div>
 
     
-  var username = document.getElementById('username').value
+    <div class="site-content agency-site-content" >
+      <div id="body1">
+      <div id="container1" >
 
-  var user_ref = database.ref('users/' + username)
-  user_ref.on('value', function(snapshot) {
-    var data = snapshot.val()
+        <div id="title_container1">
+          <span id="content">
+            <h2 class="typedtext1">Rewards</h2>
+          </span>
+          
+        </div>
+  
+        <div id="form_container1">
+       
+          <input placeholder="Username" type="name" id="username"/>
+          <!-- <input placeholder="Say Something" type="text" id="say_something"/> -->
+      
+        </div>
+  
+        <div id="button_container1">
+          <p type="submit" name="send" id="demo" value="" style="font-size: 35px;color: #26395f;"> </p>
+          <h3>Earn 10 points and get a course</h3>
+        </div>
+  
+      </div>
+        </div>
+      </div>
+  
 
-    alert(data.say_something)
+    
+<div class="mobileHide">
+    <div class="cardfooter cardfooter-4" >
+    <footer class="new_footer_area bg_color ">
+        <div class="new_footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                         
+                            <img src="assets/images/logo/logot.png" alt="logo" style="height: 50px;width: 250px;margin-left: -20px;">  
+                            </br></br>
+                            <div class="f_social_icon">
+                                <a href="https://www.facebook.com/MicroDegree-101072281390361/?modal=admin_todo_tour " class="fab fa-facebook"></a>
+                                <a href="https://twitter.com/DegreeMicro" class="fab fa-twitter"></a>
+                                <a href=" https://www.linkedin.com/company/microdegree/?viewAsMember=true" class="fab fa-linkedin"></a>
+                                <a href="https://www.instagram.com/micro.degree/?hl=en" class="fab fa-instagram"></a>
+                            </div>
+                       
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18" style="font-family: Montserrat;">COMPANY</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="./about.html" style="font-family: Montserrat;">About Us</a></li>
+                                <li><a href="./termsnconditions.html" style="font-family: Montserrat;">Terms &amp; Conditions</a></li>
+                                <li><a href="./Leaderboard.html" style="font-family: Montserrat;">Leaderboard</a></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18" style="font-family: Montserrat">PLATFORM </h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="./course.html" style="font-family: Montserrat;">Free Resources </a></li>
+                                <li><a href="https://microdegree.thinkific.com/courses/JavaScriptMasterClass" style="font-family: Montserrat;">Courses </a></li>
+                                <li><a href="./hiring-partners.html" style="font-family: Montserrat;">Hiring Partners</a></li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                        
+                            <h3 class="f-title f_600 t_color f_size_18" style="font-family: Montserrat;">Get In Touch</h3>
+                            <a href="tel:+91 97432 95272"  style="font-family: Montserrat; font-size: 14px;margin-top: -10px;color: #6a7695;">Phone : +91 97432 95272</a></br>
+                            <a style="font-family: Montserrat; font-size: 14px;margin-top: -10px;color: #6a7695;">Email : hello@microdegree.work</a> </br>
+                            <a  style="font-family: Montserrat; font-size: 14px;margin-top: -10px;color: #6a7695;">Pillpouch Healthtech Private Limited
+                                K-tech Innovation Hub
+                                3rd Floor, Plama Building 
+                                Bejai, Mangaluru , Karnataka 575004.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bg">
+                <div class="footer_bg_one"></div>
+                <div class="footer_bg_two"></div>
+            </div>
+        </div>
+        <div class="footer_bottom" >
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 col-sm-7">
+                        <center><img src="assets/images/agency/unnamed.png" style="margin-top: -10px; "/></center>
+                        <center> <p class="mb-0 f_400" style="font-family: Montserrat;">© MicroDegree 2021 All rights reserved.</p></center></center>
+                    </div>
+                    <div class="col-lg-6 col-sm-5 text-right">
+       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
+<div class="mobileShow">
+    <div class="cardfooter cardfooter-4">
+    <footer class="new_footer_area bg_color ">
+        <div class="new_footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                         
+                        <center>   <img src="assets/images/logo/logot.png" alt="logo" style="height: 50px;width: 250px;">  
+                        </div>
+                        <img src="assets/images/agency/unnamed.png" style="margin-top: -10px;"/>
+                      
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                            <center><h3 class="f-title f_600 t_color f_size_18" style="font-family: Montserrat;">COMPANY</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="./about.html" style="font-family: Montserrat;">About Us</a></li>
+                                <li><a href="./termsnconditions.html" style="font-family: Montserrat;">Terms &amp; Conditions</a></li>
+                                <li><a href="./Leaderboard.html" style="font-family: Montserrat;">Leaderboard</a></li>
+                            </ul>
+                        </center>
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                        </br> <center> <h3 class="f-title f_600 t_color f_size_18" style="font-family: Montserrat;">PLATFORM</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="./rewards.html" style="font-family: Montserrat;">Free Resources </a></li>
+                                <li><a href="https://microdegree.thinkific.com/courses/JavaScriptMasterClass" style="font-family: Montserrat;">Courses </a></li>
+                                <li><a href="./hiring-partners.html" style="font-family: Montserrat;">Hiring Partners</a></li>
+                            </ul>
+                        </div></center>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                        </br>
+                            <center>                                 <h3 class="f-title f_600 t_color f_size_18" style="font-family: Montserrat;">Get In Touch</h3>
+                                <a href="tel:+91 97432 95272"  style="font-family: Montserrat; font-size: 14px;margin-top: -10px;color: #6a7695;">Phone : +91 97432 95272</a></br>
+                                <a style="font-family: Montserrat; font-size: 14px;margin-top: -10px;color: #6a7695;">Email : hello@microdegree.work</a> </br>
+                                <a  style="font-family: Montserrat; font-size: 14px;margin-top: -10px;color: #6a7695;">Pillpouch Healthtech Private Limited
+                                    K-tech Innovation Hub
+                                    3rd Floor, Plama Building 
+                                    Bejai, Mangaluru , Karnataka 575004.</a> </center>
+                                <center> 
+                                <div class="f_social_icon" style="margin-top: 40px;">
+                                    <a href="https://www.facebook.com/MicroDegree-101072281390361/?modal=admin_todo_tour " class="fab fa-facebook"></a>
+                                    <a href="https://twitter.com/DegreeMicro" class="fab fa-twitter"></a>
+                                    <a href=" https://www.linkedin.com/company/microdegree/?viewAsMember=true" class="fab fa-linkedin"></a>
+                                    <a href="https://www.instagram.com/micro.degree/?hl=en" class="fab fa-instagram"></a>
+                                </div>
+                            </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bg">
+                <div class="footer_bg_one"></div>
+                <div class="footer_bg_two"></div>
+            </div>
+        </div>
+        <div class="footer_bottom" >
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-7">
 
-  })
+                    <center>
+                        <img src="assets/images/agency/unnamed.png" style="margin-top: -10px;"/>
+                        <p class="mb-0 f_400" style="font-family: Montserrat;">© MicroDegree 2021 All rights reserved.</p>
+                    </center>
+                    </div>
+                    <div class="col-lg-6 col-sm-5 text-right">
+       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+    </div>
+    <script  src="./review.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js'></script><script  src="./script7.js"></script>
+    <script  src="./script8.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script3.js"></script>
+    <script  src="./script10.js"></script>
 
-}
 
-</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>  
+<script  src="./script5.js"></script>
+<script  src="./script11.js"></script>
+<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+<script src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<script src='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script><script  src="./script6.js"></script>
 
-</html>
+    <!-- Aos js -->
+    <script src="assets/js/aos.js"></script>
+    <!-- Navscroll js -->
+    <script src="assets/js/navscroll.min.js"></script>
+    
+    <!-- Youtube video js -->
+    <script src="assets/js/youtube-video.js"></script>
+    <!-- Syotimer js -->
+    <script src="assets/js/SyoTimer.js"></script>
+    <!-- Plugin js -->
+    <script src="assets/js/plugins.js"></script>
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+
+    <style>
+      /* https://coolors.co/003049-d62828-f77f00-fcbf49-eae2b7 */
+      #body1 {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+      #container1 {
+        width: 35%;
+        height: 400px;
+  
+        background-color: #fff;
+        border-radius: 10px;
+        outline: 1px solid #fff;
+        outline-offset: 3px;
+        -moz-outline-radius: 10px;
+        
+  
+      }
+  
+      #title_container1 {
+        width: 100%;
+        height: 5%;
+  
+        text-align: center;
+        float: left;
+        margin: 0;
+  
+        color: #003049;
+        text-transform: uppercase;
+        font-family: Verdana;
+        font-size: 12px;
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+  
+        color: #003049;
+      }
+  
+  
+      #form_container1 {
+        width: 100%;
+        height: 20%;
+  
+        float: left;
+        margin-top: 2px;
+        padding-left: 100px;
+        padding-right: 100px;
+  
+        box-sizing: border-box;
+      }
+  
+      #form_container1 * {
+        width: 100%;
+        height: 30px;
+  
+        border: none;
+        outline: none;
+        border-left: 2px solid #003049;
+        background-color: #EBF8FF;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+  
+        margin-top: 3px;
+        float: left;
+  
+      }
+  
+      #button_container1 {
+        width: 100%;
+       
+  
+        text-align: center;
+        float: left;
+        margin-top: -20px;
+  
+        font-family: Verdana;
+  
+      }
+  
+      #submit1 {
+        width: 25%;
+        height: 35px;
+  
+        background-color: #EB5C74;
+        border-radius: 5px;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+  
+  
+      #content1 {
+        width: 105px;
+        height: 100%;
+  
+        margin: 0;
+        padding: 0;
+        float: left;
+  
+        color: #EB5C74;
+        margin-right: 5px;
+      }
+  
+      .typedtext1 {
+        display: inline-block;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #EB5C74;
+  
+      }
+  
+  
+    </style>
+   
+  
+  
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+  
+  <script>
+     // Your web app's Firebase configuration
+   var firebaseConfig = {
+      apiKey: "AIzaSyBZCnQfYuqE_UDnCaJNII1s6qdVPN5hmic",
+      authDomain: "wrud-607ec.firebaseapp.com",
+      projectId: "wrud-607ec",
+      storageBucket: "wrud-607ec.appspot.com",
+      messagingSenderId: "770545748723",
+      appId: "1:770545748723:web:4a435d84f74551d0f60586"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+  // Set database variable
+  var database = firebase.database()
+  
+  function save() {
+  
+    var username = document.getElementById('username').value
+    var say_something = document.getElementById('say_something').value
+   
+  
+    database.ref('users/' + username).set({
+      username : username,
+      say_something : say_something,
+    
+    })
+  
+    alert('Saved')
+  }
+  
+  var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+      for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] === sParam) {
+              return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+      }
+  };
+  
+  var username = getUrlParameter('email');
+  username = username.replace(/\./g,'')
+  
+       document.getElementById('username').value = username;
+  
+  
+  
+  function get() {
+  
+   
+  
+      
+    var username = document.getElementById('username').value
+  
+    var user_ref = database.ref('users/' + username)
+    user_ref.on('value', function(snapshot) {
+      var data = snapshot.val()
+  
+      // alert(data.say_something)
+      document.getElementById("demo").innerHTML = say_something;
+  
+    })
+  
+  }
+  
+  window.onload = function(){
+    var username = document.getElementById('username').value
+  
+    var user_ref = database.ref('users/' + username)
+    user_ref.on('value', function(snapshot) {
+      var data = snapshot.val().say_something;
+  
+      // alert(data.say_something)
+      
+      document.getElementById("demo").innerHTML = + data;
+    })
+  }
+  
+  </script>
+     </body>
+     </html>
+
+

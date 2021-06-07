@@ -17,8 +17,18 @@
       <div id="form_container">
      
         <input placeholder="Username" type="name" id="username"/>
-        <input placeholder="Say Something" type="text" id="say_something"/>
-    
+        <input placeholder="count" type="text" id="say_something"/>
+       
+        <input placeholder="points" type="text" id="points"/>
+        <input placeholder="amount" type="text" id="amount"/>
+        <input placeholder="amount" type="text" id="courseamount"/>
+
+        <input placeholder="referralname" type="text" id="say_something1"/>
+        <input placeholder="Email" type="text" id="say_something2"/>
+        <input placeholder="course" type="text" id="say_something3"/>
+        
+
+      
       </div>
 
       <div id="button_container">
@@ -40,7 +50,7 @@
 
     #container {
       width: 35%;
-      height: 400px;
+      height: a;
 
       background-color: #fff;
       border-radius: 10px;
@@ -182,12 +192,28 @@ function save() {
 
   var username = document.getElementById('username').value
   var say_something = document.getElementById('say_something').value
- 
+
+  var points = document.getElementById('points').value
+  var amount = document.getElementById('amount').value
+  var courseamount = document.getElementById('courseamount').value
+
+  var say_something1 = document.getElementById('say_something1').value
+    var say_something2 = document.getElementById('say_something2').value
+    var say_something3 = document.getElementById('say_something3').value
+  
+
+
 
   database.ref('users/' + username).set({
     username : username,
     say_something : say_something,
-  
+    points : points,
+    amount : amount,
+    courseamount : courseamount,
+    say_something1 : say_something1,
+    say_something2 : say_something2,
+    say_something3 : say_something3,
+    
   })
 
   alert('Saved')

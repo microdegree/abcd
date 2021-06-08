@@ -329,14 +329,14 @@
                     var file = new File([blob], "ref.jpeg", {type: 'image/jpeg'});
                     var filesArray = [file];
                     var shareData = { files: filesArray };
-
+                    var message = document.getElementById("demobutton").innerHTML = "" + username;
 
                     if (navigator.canShare && navigator.canShare(shareData)) {
 
                     // Adding title afterwards as navigator.canShare just
                     // takes files as input
                     shareData.title = "Name"
-
+                    shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!Please use my referral id when you pay.\nIt will help me earn a referral bonus\nwebsite: https://courses.microdegree.work\nReferral Id :" +message 
                     navigator.share(shareData)
                     .then(() => console.log('Share was successful.'))
                     .catch((error) => console.log('Sharing failed', error));

@@ -174,7 +174,79 @@
             <div class="col-lg-6">
                 <h1 style="font-weight: bold;">Referrals</h1>
                 <h3>Refer your friend and earn upto 15,000</h3>
-                <button onclick="myFunction1()" style="margin-left: 579px;color: #5e5e5e;"><i class="fas fa-copy"></i>&nbsp; Copy </button>
+                
+                <div class="roadmap" style="margin-top: -20px;">
+                 
+                 
+                  <div class="vl" style="margin-top: 50px;"> </div>
+                    <div class="point" style="margin-top: -260px;margin-left: -70px;">
+                   
+                    <div class="point-index">1</div>
+                 
+                    <div class="point-text" style="margin-left: 50px;margin-top: 40px;">Click share button and send to your friends</div>
+                  </div>
+                
+                  <div class="point" style="margin-top: -40px;margin-left: -70px;">
+                 
+                    <div class="point-index">2</div>
+              
+                    <div class="point-text" style="margin-left: 50px;margin-top: 40px;">Your friend buys a course with your referral code</div>
+                  </div>
+                  <div class="point" style="margin-top: -40px;margin-left: -70px;">
+                    <div class="point-index">3</div>
+          
+                    <div class="point-text" style="margin-left: 50px;margin-top: 40px;">Earn Rs. 45 - 150 per referral</div>
+                  </div>
+               
+                </div>
+             <div style="margin-top: -50px;">
+                <input style="border-left: 2px solid #623f99;background-color: #623f9923;width: 68%;text-align: center;color: #000;" placeholder="Username" type="name" id="username"/> 
+                <button class="button1" onclick="myFunction1()">Copy text</button>
+                <script>
+                function myFunction1() {
+                  var copyText = document.getElementById("username");
+                  copyText.select();
+                  copyText.setSelectionRange(0, 99999)
+                  document.execCommand("copy");
+                  alert("Copied the text: " + copyText.value);
+                }
+                </script>
+                </div>
+
+                <div style="padding-left: 70px;padding-right: 140px;">
+                  <button onclick="myFunction3()"   id="demobutton1" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 14px;margin-top: 20px;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
+                  <script>                                               
+                    function myFunction3() {                                                             
+                      fetch("assets/images/agency/ref.jpeg")
+                  .then(function(response) {
+                      return response.blob()
+                    })
+                  .then(function(blob) {
+  
+                      var file = new File([blob], "ref.jpeg", {type: 'image/jpeg'});
+                      var filesArray = [file];
+                      var shareData = { files: filesArray };
+                      var message = document.getElementById("demobutton").innerHTML = "" + username;
+  
+                      if (navigator.canShare && navigator.canShare(shareData)) {
+  
+                      // Adding title afterwards as navigator.canShare just
+                      // takes files as input
+                      shareData.title = "Name"
+                      shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!\n\nPlease use my referral id when you pay.\nIt will help me earn a referral bonus\n\nwebsite: https://courses.microdegree.work\n\nReferral Id : " +message 
+                      navigator.share(shareData,shareData.text)
+                      .then(() => console.log('Share was successful.'))
+                      .catch((error) => console.log('Sharing failed', error));
+  
+                      } else {
+                      console.log("Your system doesn't support sharing files.");
+                      }
+                  
+                  });
+                  }                                                     
+                    </script> 
+                </div>
+                <!-- <button onclick="myFunction1()" style="margin-left: 579px;color: #5e5e5e;"><i class="fas fa-copy"></i>&nbsp; Copy </button>
                 <div id="form_container1">
                 <input placeholder="Username" type="name" id="username"/> 
 
@@ -195,68 +267,12 @@
                   /* Alert the copied text */
                   alert("Copied the text: " + copyText.value);
                 }
-                </script>
-                <div style="padding-left: 110px;padding-right: 110px;">
-                <button onclick="myFunction3()"   id="demobutton1" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 10px;margin-top: -80px;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
-                <script>                                               
-                  function myFunction3() {                                                             
-                    fetch("assets/images/agency/ref.jpeg")
-                .then(function(response) {
-                    return response.blob()
-                  })
-                .then(function(blob) {
-
-                    var file = new File([blob], "ref.jpeg", {type: 'image/jpeg'});
-                    var filesArray = [file];
-                    var shareData = { files: filesArray };
-                    var message = document.getElementById("demobutton").innerHTML = "" + username;
-
-                    if (navigator.canShare && navigator.canShare(shareData)) {
-
-                    // Adding title afterwards as navigator.canShare just
-                    // takes files as input
-                    shareData.title = "Name"
-                    shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!\n\nPlease use my referral id when you pay.\nIt will help me earn a referral bonus\n\nwebsite: https://courses.microdegree.work\n\nReferral Id : " +message 
-                    navigator.share(shareData,shareData.text)
-                    .then(() => console.log('Share was successful.'))
-                    .catch((error) => console.log('Sharing failed', error));
-
-                    } else {
-                    console.log("Your system doesn't support sharing files.");
-                    }
-                
-                });
-                }                                                     
-                  </script> 
-              </div>
-                <div class="roadmap" style="margin-top: -20px;">
-                  <div class="point">
-                    
-                  </div>
-                  <div class="point">
-                    <div class="point-index">1</div>
-                 
-                    <div class="point-text" style="text-align: end;">Invite your friends and share your link</div>
-                  </div>
-                  <div class="point">
-                    <div class="point-index">2</div>
-              
-                    <div class="point-text" style="text-align: start;">Your friends enrols with your referral code</div>
-                  </div>
-                  <div class="point">
-                    <div class="point-index">3</div>
-          
-                    <div class="point-text" style="text-align: end;">Eran 150 per enrol</div>
-                  </div>
-               
-                  <div class="point">
-                    
-                  </div>
-                </div>
+                </script> -->
+           
          
         </div>
-        <div class="col-lg-2">
-            <img src="assets/images/agency/unnamed1.png" style="height: 700px;margin-left: 30px;" />
+        <div class="col-lg-2" style="margin-left: -50px;">
+            <img src="" style="height: 700px;margin-left: 30px;" />
         </div>
         <div class="col-lg-4">
           <h1 style="font-weight: bold;margin-left: -100px;">My Rewards</h1>
@@ -294,46 +310,44 @@
             <div class="col-lg-6">
                 <h2 style="font-weight: bold;">Referrals</h2>
                 <h3>Refer your friend and earn upto 15,000</h3>
-                <button onclick="myFunction2()" style="margin-left: 265px;color: #5e5e5e;"><i class="fas fa-copy"></i>&nbsp; Copy </button>
-
-                <div id="form_container1">
-                <input placeholder="Username" type="name" id="username1"/> 
-        </div>
-        <script> 
-          function myFunction2() {
-            /* Get the text field */
-            var copyText = document.getElementById("username");
-          
-            /* Select the text field */
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /* For mobile devices */
-          
-            /* Copy the text inside the text field */
-            document.execCommand("copy");
-          
-            /* Alert the copied text */
-            alert("Copied the text: " + copyText.value);
-          }
-          </script>
-          <div class="roadmap" style="margin-top: -60px;">
-            <div class="point">
+                <div class="roadmap" style="margin-top: -20px;">
+                 
+                 
+                  <div class="vl1" style="margin-top: 10px;"> </div>
+                    <div class="point" style="margin-top: -215px;margin-left: -70px;">
+                   
+                    <div class="point-index">1</div>
+                 
+                    <div class="point-text" style="margin-left: 50px;margin-top: 40px;font-size: 14px;font-weight: bold;">Click share button and send to your friends</div>
+                  </div>
+                
+                  <div class="point" style="margin-top: -40px;margin-left: -70px;">
+                 
+                    <div class="point-index">2</div>
               
-            </div>
-            <div class="point">
-              <div class="point-index">1</div>
-           
-              <div class="point-text" style="text-align: end;font-size: 12px;">Invite your friends and share your link</div>
-            </div>
-            <div class="point">
-              <div class="point-index">2</div>
-        
-              <div class="point-text" style="text-align: start;font-size: 12px;">Your friends enrols with your referral code</div>
-            </div>
-            <div class="point">
-              <div class="point-index">3</div>
-    
-              <div class="point-text" style="text-align: end;font-size: 12px;">Eran 150 per enrol</div>
-            </div>
+                    <div class="point-text" style="margin-left: 50px;margin-top: 40px;font-size: 14px;font-weight: bold;">Your friend buys a course with your referral code</div>
+                  </div>
+                  <div class="point" style="margin-top: -30px;margin-left: -70px;">
+                    <div class="point-index">3</div>
+          
+                    <div class="point-text" style="margin-left: 50px;margin-top: 40px;font-size: 14px;font-weight: bold;">Earn Rs. 45 - 150 per referral</div>
+                  </div>
+               <center>
+                  <div style="margin-top: -10px;">
+                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;width: 60%;text-align: center;color: #000;margin-left: -50px;" placeholder="Username" type="name" id="username"/> 
+                    <button class="button1" onclick="myFunction2()" ><b>Copy text</b></button>
+                    <script>
+                    function myFunction2() {
+                      var copyText = document.getElementById("username");
+                      copyText.select();
+                      copyText.setSelectionRange(0, 99999)
+                      document.execCommand("copy");
+                      alert("Copied the text: " + copyText.value);
+                    }
+                    </script>
+                    </div>
+                  </center>
+         
           </br>
             <div >
               <button onclick="myFunction4()"   id="demobutton" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 10px;height: auto;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
@@ -383,8 +397,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2">
-            <img src="assets/images/agency/unnamed.png" style="margin-top: 20px;" />
+        <div class="col-lg-2" style="padding: 10px;">
+            <img src="" style="margin-top: -40px;" />
         </div>
         <div class="col-lg-4">
           <h2 style="font-weight: bold;">My Rewards</h2>
@@ -531,7 +545,7 @@ tr:nth-child(even) {
   
   
       #form_container1 {
-        width: 100%;
+        width: 50%;
         height: 20%;
   
         
@@ -541,8 +555,8 @@ tr:nth-child(even) {
         box-sizing: border-box;
       }
   
-      #form_container1 * {
-        width: 100%;
+      .form_container1 * {
+        width: 50%;
         height: 30px;
   
         border: none;
@@ -661,39 +675,8 @@ tr:nth-child(even) {
   padding: 10px 50px;
   position: relative;
 }
-.roadmap .point:first-child .point-index {
-  box-shadow: 0 4px 8px 0 #26395f;
-  top: auto;
-  bottom: 0;
-  transform: translate(-50%, 2px) !important;
-}
-.roadmap .point:last-child .point-index {
-  top: 0;
-  transform: translate(50%, -2px) !important;
-}
-.roadmap .point:not(:last-child) {
-  border-bottom: 2px solid #623F99;
-}
-.roadmap .point:nth-child(odd) {
-  align-items: flex-start;
-}
-.roadmap .point:nth-child(odd):not(:first-child) {
-  border-left: 2px solid #623F99;
-}
-.roadmap .point:nth-child(odd) .point-index {
-  left: 0;
-  transform: translate(-50%, -50%);
-}
-.roadmap .point:nth-child(even) {
-  align-items: flex-end;
-}
-.roadmap .point:nth-child(even):not(:last-child) {
-  border-right: 2px solid #623F99;
-}
-.roadmap .point:nth-child(even) .point-index {
-  right: 0;
-  transform: translate(50%, -50%);
-}
+
+
 .roadmap .point .point-index {
   position: absolute;
   top: 50%;
@@ -734,6 +717,29 @@ tr:nth-child(even) {
     padding: 20px;
   }
 }
+.vl {
+  border-left: 2px dotted #623F99;
+  height: 180px;
+    
+}.vl1 {
+  border-left: 2px dotted #623F99;
+  height: 160px;
+    
+}
+.button1 {
+  background-color: #623F99; /* Green */
+  border: none;
+  color: white;
+  padding: 11px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
     </style>
    
   

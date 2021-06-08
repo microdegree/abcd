@@ -319,13 +319,15 @@
               <button onclick="myFunction4()"   id="demobutton" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 10px;height: auto;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
               <script>                                               
                 function myFunction4() { 
-                
-                var filesArray = "assets/images/agency/ref.jpeg";                                                       
+                const image = await fetch("assets/images/agency/ref.jpeg");
+                const blob = await image.blob();
+                const file = new File([blob], 'image.jpeg', { type: 'image/jpeg' });
+                                                                       
                 var message = document.getElementById("demobutton").innerHTML = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!Please use my referral id when you pay.\nIt will help me earn a referral bonus\nwebsite: https://courses.microdegree.work\nReferral Id :" + username;                           
-                if (navigator.canShare && navigator.canShare({ files: filesArray })) {                                                         
+                if (!navigator.share) return;                                                          
                 navigator.share({                                    
                 text: "" +message, 
-                files: filesArray,
+                files: [file]
                 })                                
                 .then(() => { console.log("Shared YEEEE!!!!!"); })                                                         
                 .catch((error) => { console.log("Sharing Failed") }); }                                                     

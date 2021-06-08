@@ -174,109 +174,86 @@
             <div class="col-lg-6">
                 <h1 style="font-weight: bold;">Referrals</h1>
                 <h3>Refer your friend and earn upto 15,000</h3>
-                
-                <div class="roadmap" style="margin-top: -20px;">
-                 
-                 
-                  <div class="vl" style="margin-top: 50px;"> </div>
-                    <div class="point" style="margin-top: -260px;margin-left: -70px;">
-                   
-                    <div class="point-index">1</div>
-                 
-                    <div class="point-text" style="margin-left: 50px;margin-top: 40px;">Click share button and send to your friends</div>
-                  </div>
-                
-                  <div class="point" style="margin-top: -40px;margin-left: -70px;">
-                 
-                    <div class="point-index">2</div>
               
-                    <div class="point-text" style="margin-left: 50px;margin-top: 40px;">Your friend buys a course with your referral code</div>
-                  </div>
-                  <div class="point" style="margin-top: -40px;margin-left: -70px;">
-                    <div class="point-index">3</div>
-          
-                    <div class="point-text" style="margin-left: 50px;margin-top: 40px;">Earn Rs. 45 - 150 per referral</div>
-                  </div>
-                  
-               
-                </div>
-             <div style="margin-top: -50px;">
-                <input style="border-left: 2px solid #623f99;background-color: #623f9923;width: 68%;text-align: center;color: #000;" placeholder="Username" type="name" id="username"/> 
-                <button class="button1" onclick="myFunction1()">Copy text</button>
-                <script>
-                function myFunction1() {
-                  var copyText = document.getElementById("username");
-                  copyText.select();
-                  copyText.setSelectionRange(0, 99999)
-                  document.execCommand("copy");
-                  alert("Copied the text: " + copyText.value);
-                }
-                </script>
-                </div>
 
-                <div style="padding-left: 70px;padding-right: 140px;">
-                  <button onclick="myFunction3()"   id="demobutton1" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 14px;margin-top: 20px;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
-                  <br> <p style="font-size: 10px;margin-left: -80px;">*Referral rewards can be claimed only after reaching Rs.200</p>
-                  <script>                                               
-                    function myFunction3() {                                                             
-                      fetch("assets/images/agency/ref.jpeg")
-                  .then(function(response) {
-                      return response.blob()
-                    })
-                  .then(function(blob) {
-  
-                      var file = new File([blob], "ref.jpeg", {type: 'image/jpeg'});
-                      var filesArray = [file];
-                      var shareData = { files: filesArray };
-                      var message = document.getElementById("demobutton").innerHTML = "" + username;
-  
-                      if (navigator.canShare && navigator.canShare(shareData)) {
-  
-                      // Adding title afterwards as navigator.canShare just
-                      // takes files as input
-                      shareData.title = "Name"
-                      shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!\n\nPlease use my referral id when you pay.\nIt will help me earn a referral bonus\n\nwebsite: https://courses.microdegree.work\n\nReferral Id : " +message 
-                      navigator.share(shareData,shareData.text)
-                      .then(() => console.log('Share was successful.'))
-                      .catch((error) => console.log('Sharing failed', error));
-  
-                      } else {
-                      console.log("Your system doesn't support sharing files.");
-                      }
+                  <div class="roadmap" style="margin-top: -20px;">
+                 
+                 
+                    <div class="vl" style="margin-top: 50px;"> </div>
+                      <div class="point" style="margin-top: -260px;margin-left: -70px;">
+                     
+                      <div class="point-index">1</div>
+                   
+                      <div class="point-text" style="margin-left: 50px;margin-top: 40px;">Click share button and send to your friends</div>
+                    </div>
                   
-                  });
-                  }                                                     
-                    </script> 
-                </div>
-                <!-- <button onclick="myFunction1()" style="margin-left: 579px;color: #5e5e5e;"><i class="fas fa-copy"></i>&nbsp; Copy </button>
-                <div id="form_container1">
-                <input placeholder="Username" type="name" id="username"/> 
+                    <div class="point" style="margin-top: -40px;margin-left: -70px;">
+                   
+                      <div class="point-index">2</div>
+                
+                      <div class="point-text" style="margin-left: 50px;margin-top: 40px;">Your friend buys a course with your referral code</div>
+                    </div>
+                    <div class="point" style="margin-top: -40px;margin-left: -70px;">
+                      <div class="point-index">3</div>
+            
+                      <div class="point-text" style="margin-left: 50px;margin-top: 40px;">Earn Rs. 45 - 150 per referral</div>
+                    </div>
+                    
+                 
+                  </div>
+                  <div style="margin-top: -50px;">
+                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;width: 68%;text-align: center;color: #000;" placeholder="Username" type="name" id="username"/> 
+                    <button class="button1" onclick="myFunction1()">Copy text</button>
+                    <script>
+                    function myFunction1() {
+                      var copyText = document.getElementById("username");
+                      copyText.select();
+                      copyText.setSelectionRange(0, 99999)
+                      document.execCommand("copy");
+                      alert("Copied the text: " + copyText.value);
+                    }
+                    </script>
+                    </div>
+                <div style="padding-left: 110px;padding-right: 110px;">
+                <button onclick="myFunction3()"   id="demobutton1" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 10px;margin-top: 20px;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
+                <script>                                               
+                  function myFunction3() {                                                             
+                    fetch("assets/images/agency/ref.jpeg")
+                .then(function(response) {
+                    return response.blob()
+                  })
+                .then(function(blob) {
 
-                </div>
-     
-                <script> 
-                function myFunction1() {
-                  /* Get the text field */
-                  var copyText = document.getElementById("username");
+                    var file = new File([blob], "ref.jpeg", {type: 'image/jpeg'});
+                    var filesArray = [file];
+                    var shareData = { files: filesArray };
+                    var message = document.getElementById("demobutton").innerHTML = "" + username;
+
+                    if (navigator.canShare && navigator.canShare(shareData)) {
+
+                    // Adding title afterwards as navigator.canShare just
+                    // takes files as input
+                    shareData.title = "Name"
+                    shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!\n\nPlease use my referral id when you pay.\nIt will help me earn a referral bonus\n\nwebsite: https://courses.microdegree.work\n\nReferral Id : " +message 
+                    navigator.share(shareData,shareData.text)
+                    .then(() => console.log('Share was successful.'))
+                    .catch((error) => console.log('Sharing failed', error));
+
+                    } else {
+                    console.log("Your system doesn't support sharing files.");
+                    }
                 
-                  /* Select the text field */
-                  copyText.select();
-                  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-                
-                  /* Copy the text inside the text field */
-                  document.execCommand("copy");
-                
-                  /* Alert the copied text */
-                  alert("Copied the text: " + copyText.value);
-                }
-                </script> -->
-           
+                });
+                }                                                     
+                  </script> 
+              </div>
+              
          
         </div>
-        <div class="col-lg-2" style="margin-left: -50px;">
-            <img src="" style="height: 700px;margin-left: 30px;" />
+        <div class="col-lg-2">
+
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4" style="margin-left: -50px;">
           <h1 style="font-weight: bold;margin-left: -100px;">My Rewards</h1>
             
               <div class="tab1cards" style="text-align: start;margin-top: 50px;margin-left: -150px;">
@@ -334,77 +311,68 @@
           
                     <div class="point-text" style="margin-left: 50px;margin-top: 40px;font-size: 14px;font-weight: bold;">Earn Rs. 45 - 150 per referral</div>
                   </div>
-               <center>
-                  <div style="margin-top: -10px;">
-                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;width: 60%;text-align: center;color: #000;margin-left: -50px;" placeholder="Username" type="name" id="username"/> 
-                    <button class="button1" onclick="myFunction2()" ><b>Copy text</b></button>
+                </div>
+             <center>
+               <div style="margin-top: -40px;"></div>
+                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;text-align: center;color: #000;margin-left: -50px;height: 36px;" placeholder="Username1" type="name" id="username1"/> 
+                    <button class="button2" onclick="myFunction2()" >Copy text</button>
                     <script>
                     function myFunction2() {
-                      var copyText = document.getElementById("username");
+                      var copyText = document.getElementById("username1");
                       copyText.select();
                       copyText.setSelectionRange(0, 99999)
                       document.execCommand("copy");
                       alert("Copied the text: " + copyText.value);
                     }
                     </script>
-                    </div>
-                  </center>
-         
-          </br>
-            <div >
-              <button onclick="myFunction4()"   id="demobutton" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 10px;height: auto;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
-              <br> <p style="font-size: 10px;margin-left: -50px;">*Referral rewards can be claimed only after reaching Rs.200</p>
-                  
-              <script> 
-              function myFunction4() { 
-
-                fetch("assets/images/agency/ref.jpeg")
-                .then(function(response) {
-                    return response.blob()
-                  })
-                .then(function(blob) {
-
-                    var file = new File([blob], "ref.jpeg", {type: 'image/jpeg'});
-                    var filesArray = [file];
-                    var shareData = { files: filesArray };
-                    var message = document.getElementById("demobutton").innerHTML = "" + username;
-
-                    if (navigator.canShare && navigator.canShare(shareData)) {
-
-                    // Adding title afterwards as navigator.canShare just
-                    // takes files as input
-                    shareData.title = "Name"
-                    shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!\n\nPlease use my referral id when you pay.\nIt will help me earn a referral bonus\n\nwebsite: https://courses.microdegree.work\n\nReferral Id : " +message 
-                    navigator.share(shareData,shareData.text)
-                    .then(() => console.log('Share was successful.'))
-                    .catch((error) => console.log('Sharing failed', error));
-
-                    } else {
-                    console.log("Your system doesn't support sharing files.");
+             </center>
+             
+                  </br>
+                  <div >
+                    <button onclick="myFunction4()"   id="demobutton" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 10px;height: auto;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
+                    <br> <p style="font-size: 10px;margin-left: 0px;">*Referral rewards can be claimed only after reaching Rs.200</p>
+                        
+                    <script> 
+                    function myFunction4() { 
+      
+                      fetch("assets/images/agency/ref.jpeg")
+                      .then(function(response) {
+                          return response.blob()
+                        })
+                      .then(function(blob) {
+      
+                          var file = new File([blob], "ref.jpeg", {type: 'image/jpeg'});
+                          var filesArray = [file];
+                          var shareData = { files: filesArray };
+                          var message = document.getElementById("demobutton").innerHTML = "" + username;
+      
+                          if (navigator.canShare && navigator.canShare(shareData)) {
+      
+                          // Adding title afterwards as navigator.canShare just
+                          // takes files as input
+                          shareData.title = "Name"
+                          shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!\n\nPlease use my referral id when you pay.\nIt will help me earn a referral bonus\n\nwebsite: https://courses.microdegree.work\n\nReferral Id : " +message 
+                          navigator.share(shareData,shareData.text)
+                          .then(() => console.log('Share was successful.'))
+                          .catch((error) => console.log('Sharing failed', error));
+      
+                          } else {
+                          console.log("Your system doesn't support sharing files.");
+                          }
+                      
+                      });
                     }
-                
-                });
-              }
-              
-                // function myFunction4() { 
-                
-                                                                       
-                // var message = document.getElementById("demobutton").innerHTML = "" + username;                           
-                // if (!navigator.share) return;                                                          
-                // navigator.share({                                    
-                // text: "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!Please use my referral id when you pay.\nIt will help me earn a referral bonus\nwebsite: https://courses.microdegree.work\nReferral Id :" +message 
-
-                // })                                
-                // .then(() => { console.log("Shared YEEEE!!!!!"); })                                                         
-                // .catch((error) => { console.log("Sharing Failed") }); }                                                     
-                </script> 
-            </div>
-          </div>
+                    
+                                                          
+                      </script> 
+                  </div>
+               
+    
+        
+        <div class="col-lg-2">
+            <img src="assets/images/agency/unnamed.png" style="margin-top: 0px;" />
         </div>
-        <div class="col-lg-2" style="padding: 10px;">
-            <img src="" style="margin-top: -40px;" />
-        </div>
-        <div class="col-lg-4" style="margin-top: -80px;">
+        <div class="col-lg-4">
           <h2 style="font-weight: bold;">My Rewards</h2>
             
           <div class="tab1cards" style="margin-top: 20px;padding-left: 20px;padding-right: 20px;">
@@ -472,279 +440,308 @@
 
   
 
-    <style>
-      /* https://coolors.co/003049-d62828-f77f00-fcbf49-eae2b7 */
-      #body1 {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    p.start {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 28px;
-    text-align: justify;
-    display: inline;
+  
+<style>
+  /* https://coolors.co/003049-d62828-f77f00-fcbf49-eae2b7 */
+  #body1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p.start {
+font-family: 'Open Sans', sans-serif;
+font-size: 16px;
+line-height: 28px;
+text-align: justify;
+display: inline;
 }
 
 h1.start {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 28px;
-    margin: 0;
-    display: inline-block;
+font-family: 'Open Sans', sans-serif;
+font-size: 16px;
+line-height: 28px;
+margin: 0;
+display: inline-block;
 }
-    table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
 }
 
 td, th {
-  border: 1px solid #eb5c7459;
-  text-align: left;
-  padding: 8px;
+border: 1px solid #eb5c7459;
+text-align: left;
+padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #eb5c7459;
+background-color: #eb5c7459;
 }
-  
-      #container1 {
-        width: 35%;
-        height: 400px;
-  
-        background-color: #fff;
-        border-radius: 10px;
-        outline: 1px solid #fff;
-        outline-offset: 3px;
-        -moz-outline-radius: 10px;
-        
-  
-      }
-  
-      #title_container1 {
-        width: 100%;
-        height: 5%;
-  
-        text-align: center;
-        float: left;
-        margin: 0;
-  
-        color: #ffffff;
-        text-transform: uppercase;
-        font-family: Verdana;
-        font-size: 12px;
-  
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-        margin-bottom: 50px;
-  
-        color: #ffffff;
-      }
-  
-  
-      #form_container1 {
-        width: 50%;
-        height: 20%;
-  
-        
-        margin-top: 2px;
-       
-  
-        box-sizing: border-box;
-      }
-  
-      .form_container1 * {
-        width: 50%;
-        height: 30px;
-  
-        border: none;
-        outline: none;
-        border-left: 2px solid #003049;
-        background-color: #EBF8FF;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-  
-        margin-top: 3px;
-        float: left;
-  
-      }
-  
-      #button_container1 {
-        width: 100%;
-       
-  
-        text-align: center;
-        float: left;
-        margin-top: -20px;
-  
-        font-family: Verdana;
-  
-      }
-  
-      #submit1 {
-        width: 25%;
-        height: 35px;
-  
-        background-color: #EB5C74;
-        border-radius: 5px;
-        font-weight: bold;
-        color: #fff;
-        border: none;
-        outline: none;
-        cursor: pointer;
-      }
-  
-  
-      #content1 {
-        width: 105px;
-        height: 100%;
-  
-        margin: 0;
-        padding: 0;
-        float: left;
-  
-        color: #EB5C74;
-        margin-right: 5px;
-      }
-  
-      .typedtext1 {
-        display: inline-block;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-  
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 5px;
-        border-bottom: 2px solid #EB5C74;
-  
-      }
-      .card1 {
-  box-shadow: 0 4px 8px 0 #623f9971;
-  transition: 0.3s;
-  width: 200px;
-  text-align: left;
-  padding: 20px;
-  color: #fff;
-  background-color: #623f99c9;
-  border-radius: 20px;
-  height: auto;
+
+  #container1 {
+    width: 35%;
+    height: 400px;
+
+    background-color: #fff;
+    border-radius: 10px;
+    outline: 1px solid #fff;
+    outline-offset: 3px;
+    -moz-outline-radius: 10px;
+    
+
+  }
+
+  #title_container1 {
+    width: 100%;
+    height: 5%;
+
+    text-align: center;
+    float: left;
+    margin: 0;
+
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: Verdana;
+    font-size: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    color: #ffffff;
+  }
+
+
+  #form_container1 {
+    width: 50%;
+    height: 20%;
+
+    
+    margin-top: 2px;
+   
+
+    box-sizing: border-box;
+  }
+
+  .form_container1 * {
+    width: 50%;
+    height: 30px;
+
+    border: none;
+    outline: none;
+    border-left: 2px solid #003049;
+    background-color: #EBF8FF;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    margin-top: 3px;
+    float: left;
+
+  }
+  .form_container2 * {
+    width: 50%;
+    height: 25px;
+
+    border: none;
+    outline: none;
+    border-left: 2px solid #003049;
+    background-color: #EBF8FF;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    margin-top: 3px;
+    float: left;
+
+  }
+
+  #button_container1 {
+    width: 100%;
+   
+
+    text-align: center;
+    float: left;
+    margin-top: -20px;
+
+    font-family: Verdana;
+
+  }
+
+  #submit1 {
+    width: 25%;
+    height: 35px;
+
+    background-color: #EB5C74;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+
+  #content1 {
+    width: 105px;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    float: left;
+
+    color: #EB5C74;
+    margin-right: 5px;
+  }
+
+  .typedtext1 {
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #EB5C74;
+
+  }
+  .card1 {
+box-shadow: 0 4px 8px 0 #623f9971;
+transition: 0.3s;
+width: 200px;
+text-align: left;
+padding: 20px;
+color: #fff;
+background-color: #623f99c9;
+border-radius: 20px;
+height: auto;
 }
 
 .card1:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .card2 {
-  box-shadow: 0 4px 8px 0 #eb5c7488;
-  transition: 0.3s;
-  width: 200px;
-  text-align: left;
-  padding: 20px;
-  color: #fff;
-  background-color: #eb5c74b7;
-  border-radius: 20px;
-  height: auto;
+box-shadow: 0 4px 8px 0 #eb5c7488;
+transition: 0.3s;
+width: 200px;
+text-align: left;
+padding: 20px;
+color: #fff;
+background-color: #eb5c74b7;
+border-radius: 20px;
+height: auto;
 }
 
 .card2:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .circle {
-  border-radius: 50%;
-  box-shadow: 0 4px 8px 0 #26395f;
-  height: 50px;
-  width: 50px;
-  padding: 20px;
+border-radius: 50%;
+box-shadow: 0 4px 8px 0 #26395f;
+height: 50px;
+width: 50px;
+padding: 20px;
 }
 .tab1cards {
-  display: flex;
-  flex-direction: row;
-  padding-left: 50px;
+display: flex;
+flex-direction: row;
+padding-left: 50px;
 }
 
 .roadmap {
-  padding: 30px 50px;
+padding: 30px 50px;
 }
 .roadmap .point {
-  display: flex;
-  flex-direction: column;
-  padding: 10px 50px;
-  position: relative;
+display: flex;
+flex-direction: column;
+padding: 10px 50px;
+position: relative;
 }
 
 
 .roadmap .point .point-index {
-  position: absolute;
-  top: 50%;
-  width: 40px;
-  height: 40px;
-  background: #ffffff;
-  border: 2px solid #623F99;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 23px;
-  font-weight: bold;
-  box-shadow: 0 4px 8px 0 #26395f;
+position: absolute;
+top: 50%;
+width: 40px;
+height: 40px;
+background: #ffffff;
+border: 2px solid #623F99;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 23px;
+font-weight: bold;
+box-shadow: 0 4px 8px 0 #26395f;
 }
 .roadmap .point .point-label {
-  flex: 1 0 100%;
-  width: 100%;
-  font-size: 14px;
-  margin-bottom: 5px;
+flex: 1 0 100%;
+width: 100%;
+font-size: 14px;
+margin-bottom: 5px;
 }
 @media (min-width: 641px) {
-  .roadmap .point .point-label {
-    flex: 1 0 50%;
-    width: 100%;
-  }
+.roadmap .point .point-label {
+flex: 1 0 50%;
+width: 100%;
+}
 }
 .roadmap .point .point-text {
-  flex: 1 0 100%;
-  width: 100%;
-  font-size: 20px;
-  color: #000000;
+flex: 1 0 100%;
+width: 100%;
+font-size: 20px;
+color: #000000;
 }
 @media (min-width: 641px) {
-  .roadmap .point .point-text {
-    flex: 1 0 50%;
-    width: 100%;
-    padding: 20px;
-  }
+.roadmap .point .point-text {
+flex: 1 0 50%;
+width: 100%;
+padding: 20px;
+}
 }
 .vl {
-  border-left: 2px dotted #623F99;
-  height: 180px;
-    
+border-left: 2px dotted #623F99;
+height: 180px;
+
 }.vl1 {
-  border-left: 2px dotted #623F99;
-  height: 160px;
-    
+border-left: 2px dotted #623F99;
+height: 160px;
+
 }
 .button1 {
-  background-color: #623F99; /* Green */
-  border: none;
-  color: white;
-  padding: 11px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+background-color: #623F99; /* Green */
+border: none;
+color: white;
+padding: 11px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+.button2 {
+background-color: #623F99; /* Green */
+border: none;
+color: white;
+padding: 7px 26px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 13px;
+margin: 4px 2px;
+cursor: pointer;
 }
 
 
-    </style>
+</style>
    
   
   

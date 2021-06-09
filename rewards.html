@@ -216,7 +216,8 @@
                     </div>
                 <div style="padding-left: 110px;padding-right: 110px;">
                 <button onclick="myFunction3()"   id="demobutton1" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 10px;margin-top: 20px;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
-                <script>                                               
+                <br> <p style="font-size: 10px;margin-left: -120px;">*Referral rewards can be claimed only after reaching Rs.200</p>
+               <script>                                               
                   function myFunction3() {                                                             
                     fetch("assets/images/agency/ref.jpeg")
                 .then(function(response) {
@@ -227,7 +228,7 @@
                     var file = new File([blob], "ref.jpeg", {type: 'image/jpeg'});
                     var filesArray = [file];
                     var shareData = { files: filesArray };
-                    var message = document.getElementById("demobutton").innerHTML = "" + username;
+                    var message = document.getElementById("demobutton1").innerHTML = "" + username;
 
                     if (navigator.canShare && navigator.canShare(shareData)) {
 
@@ -258,12 +259,12 @@
             
               <div class="tab1cards" style="text-align: start;margin-top: 50px;margin-left: -150px;">
                 <div class="card1">
-                  <p  class="start" type="submit" name="send" id="demo1" value="" style="font-size: 35px;color: #ffffff;"> </p>
+                  <p  class="start" type="submit" name="send" id="demo1" value="" style="font-size: 35px;color: #ffffff;"> 0</p>
                   <hr style="margin-top: -5px;color: #ffffff;background-color: #ffffff;">
                   <h4 style="color: #ffffff;"><b>Referrals</b></h4>
                 </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div class="card2">
-                  <p  class="start" type="submit" name="send" id="demo2" value="" style="font-size: 35px;color: #fff;"> </p>
+                  <p  class="start" type="submit" name="send" id="demo2" value="" style="font-size: 35px;color: #fff;">0 </p>
                   <hr style="margin-top: -5px;color: #ffffff;background-color: #ffffff;">
                   <h4 style="color: #ffffff;"><b>Earnings</b></h4>
                 </div>
@@ -378,12 +379,12 @@
           <div class="tab1cards" style="margin-top: 20px;padding-left: 20px;padding-right: 20px;">
             <div class="card1">
         
-              <p class="start" type="submit" name="send" id="demo3" value="" style="font-size: 35px;color: #fff;"></p>
+              <p class="start" type="submit" name="send" id="demo3" value="" style="font-size: 35px;color: #fff;">0</p>
               <hr style="margin-top: -5px;color: #ffffff;background-color: #ffffff;">
               <h4 style="color: #ffffff;"><b>Referrals</b></h4>
             </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="card2">
-              <p  class="start" type="submit" name="send" id="demo4" value="" style="font-size: 35px;color: #fff;"> </p>
+              <p  class="start" type="submit" name="send" id="demo4" value="" style="font-size: 35px;color: #fff;">0 </p>
               <hr style="margin-top: -5px;color: #ffffff;background-color: #ffffff;">
               <h4 style="color: #ffffff;"><b>Earnings</b></h4>
             </div>

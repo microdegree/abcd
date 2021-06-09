@@ -203,14 +203,14 @@
                   </div>
                   <div style="margin-top: -50px;">
                     <input style="border-left: 2px solid #623f99;background-color: #623f9923;width: 68%;text-align: center;color: #000;" placeholder="Username" type="name" id="username"/> 
-                    <button class="button1" onclick="myFunction1()">Copy text</button>
+                    <button class="button1" onclick="myFunction1()">Copy Referral Id</button>
                     <script>
                     function myFunction1() {
                       var copyText = document.getElementById("username");
                       copyText.select();
                       copyText.setSelectionRange(0, 99999)
                       document.execCommand("copy");
-                      alert("Copied the text: " + copyText.value);
+                      alert("Copied Referral Id: " + copyText.value);
                     }
                     </script>
                     </div>
@@ -315,15 +315,15 @@
                 </div>
              <center>
                <div style="margin-top: -40px;"></div>
-                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;text-align: center;color: #000;margin-left: -50px;height: 36px;" placeholder="Username1" type="name" id="username1"/> 
-                    <button class="button2" onclick="myFunction2()" >Copy text</button>
+                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;text-align: center;color: #000;margin-left: -0px;height: 36px;" placeholder="Username1" type="name" id="username1"/> 
+                    <button class="button2" onclick="myFunction2()" >Copy Referral Id</button>
                     <script>
                     function myFunction2() {
                       var copyText = document.getElementById("username1");
                       copyText.select();
                       copyText.setSelectionRange(0, 99999)
                       document.execCommand("copy");
-                      alert("Copied the text: " + copyText.value);
+                      alert("Copied Referral Id : " + copyText.value);
                     }
                     </script>
              </center>
@@ -345,14 +345,14 @@
                           var file = new File([blob], "ref.jpeg", {type: 'image/jpeg'});
                           var filesArray = [file];
                           var shareData = { files: filesArray };
-                          var message = document.getElementById("demobutton").innerHTML = "" + username;
+                          // var message = document.getElementById("demobutton").innerHTML = "" + username;
       
                           if (navigator.canShare && navigator.canShare(shareData)) {
       
                           // Adding title afterwards as navigator.canShare just
                           // takes files as input
                           shareData.title = "Name"
-                          shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!\n\nPlease use my referral id when you pay.\nIt will help me earn a referral bonus\n\nwebsite: https://courses.microdegree.work\n\nReferral Id : " +message 
+                          shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!\n\nPlease use my referral id when you pay.\nIt will help me earn a referral bonus\n\nwebsite: https://courses.microdegree.work\n\nReferral Id : " +username 
                           navigator.share(shareData,shareData.text)
                           .then(() => console.log('Share was successful.'))
                           .catch((error) => console.log('Sharing failed', error));
@@ -736,7 +736,7 @@ padding: 7px 26px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
-font-size: 13px;
+font-size: 10px;
 margin: 4px 2px;
 cursor: pointer;
 }

@@ -17,15 +17,11 @@
       <div id="form_container">
      
         <input placeholder="Username" type="name" id="username"/>
-        <input placeholder="count" type="text" id="say_something"/>
+      
        
         <input placeholder="points" type="text" id="points"/>
         <input placeholder="amount" type="text" id="amount"/>
-        <input placeholder="amount" type="text" id="courseamount"/>
-
-        <input placeholder="referralname" type="text" id="say_something1"/>
-        <input placeholder="Email" type="text" id="say_something2"/>
-        <input placeholder="course" type="text" id="say_something3"/>
+  
         
 
       
@@ -174,13 +170,24 @@
 
 <script>
    // Your web app's Firebase configuration
- var firebaseConfig = {
-    apiKey: "AIzaSyBZCnQfYuqE_UDnCaJNII1s6qdVPN5hmic",
-    authDomain: "wrud-607ec.firebaseapp.com",
-    projectId: "wrud-607ec",
-    storageBucket: "wrud-607ec.appspot.com",
-    messagingSenderId: "770545748723",
-    appId: "1:770545748723:web:4a435d84f74551d0f60586"
+//  var firebaseConfig = {
+//     apiKey: "AIzaSyBZCnQfYuqE_UDnCaJNII1s6qdVPN5hmic",
+//     authDomain: "wrud-607ec.firebaseapp.com",
+//     projectId: "wrud-607ec",
+//     storageBucket: "wrud-607ec.appspot.com",
+//     messagingSenderId: "770545748723",
+//     appId: "1:770545748723:web:4a435d84f74551d0f60586"
+//   };
+//   // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
+var firebaseConfig = {
+    apiKey: "AIzaSyAE4ZTgjGZlhi7hnPZHIYr78VfqrayFMXA",
+    authDomain: "reward-5b624.firebaseapp.com",
+    databaseURL: "https://reward-5b624-default-rtdb.firebaseio.com",
+    projectId: "reward-5b624",
+    storageBucket: "reward-5b624.appspot.com",
+    messagingSenderId: "421421503433",
+    appId: "1:421421503433:web:c0418c8577c2b080dcce18"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -191,28 +198,23 @@ var database = firebase.database()
 function save() {
 
   var username = document.getElementById('username').value
-  var say_something = document.getElementById('say_something').value
+
 
   var points = document.getElementById('points').value
   var amount = document.getElementById('amount').value
-  var courseamount = document.getElementById('courseamount').value
 
-  var say_something1 = document.getElementById('say_something1').value
-    var say_something2 = document.getElementById('say_something2').value
-    var say_something3 = document.getElementById('say_something3').value
+
+  
   
 
 
 
   database.ref('users/' + username).set({
     username : username,
-    say_something : say_something,
+  
     points : points,
     amount : amount,
-    courseamount : courseamount,
-    say_something1 : say_something1,
-    say_something2 : say_something2,
-    say_something3 : say_something3,
+ 
     
   })
 

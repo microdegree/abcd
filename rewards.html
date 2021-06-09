@@ -763,13 +763,13 @@ cursor: pointer;
   //   firebase.initializeApp(firebaseConfig);
 
   var firebaseConfig = {
-    apiKey: "AIzaSyAE4ZTgjGZlhi7hnPZHIYr78VfqrayFMXA",
-    authDomain: "reward-5b624.firebaseapp.com",
-    databaseURL: "https://reward-5b624-default-rtdb.firebaseio.com",
-    projectId: "reward-5b624",
-    storageBucket: "reward-5b624.appspot.com",
-    messagingSenderId: "421421503433",
-    appId: "1:421421503433:web:c0418c8577c2b080dcce18"
+    apiKey: "AIzaSyAatOQ3ssxERtVQpyDnszdv0O_jNUEyowc",
+    authDomain: "md-rewards.firebaseapp.com",
+    databaseURL: "https://md-rewards-default-rtdb.firebaseio.com",
+    projectId: "md-rewards",
+    storageBucket: "md-rewards.appspot.com",
+    messagingSenderId: "439646611725",
+    appId: "1:439646611725:web:a72896a2911fcd784d6844"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -783,7 +783,7 @@ cursor: pointer;
     var say_something = document.getElementById('say_something').value
    
   
-    database.ref('users/' + username).set({
+    database.ref('19D8uL8TFbb47Up_LBBND-zHlkZs4AS-p7i-oUJVm1aI/users/' + username).set({
       username : username,
       say_something : say_something,
     
@@ -817,7 +817,7 @@ cursor: pointer;
       
     var username = document.getElementById('username').value
   
-    var user_ref = database.ref('users/' + username)
+    var user_ref = database.ref('19D8uL8TFbb47Up_LBBND-zHlkZs4AS-p7i-oUJVm1aI/users/' + username)
     user_ref.on('value', function(snapshot) {
       var data = snapshot.val()
   
@@ -839,7 +839,7 @@ cursor: pointer;
     
     var username = document.getElementById('username').value
   
-    var user_ref = database.ref('users/' + username)
+    var user_ref = database.ref('19D8uL8TFbb47Up_LBBND-zHlkZs4AS-p7i-oUJVm1aI/users/' + username)
     user_ref.on('value', function(snapshot) {
     
       

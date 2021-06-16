@@ -179,7 +179,7 @@
                   <div class="roadmap" style="margin-top: -20px;">
                  
                  
-                    <div class="vl" style="margin-top: 50px;"> </div>
+                    <div class="vl" style="margin-top: 220px;"> </div>
                       <div class="point" style="margin-top: -260px;margin-left: -70px;">
                      
                       <div class="point-index">1</div>
@@ -202,8 +202,10 @@
                  
                   </div>
                   <div style="margin-top: -50px;">
-                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;width: 68%;text-align: center;color: #000;" placeholder="Username" type="name" id="username"/> 
+                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;width: 68%;text-align: center;color: #000;" placeholder="Referral Id" type="name" id="username" onkeyup="success()"/> 
+                    
                     <button class="button1" onclick="myFunction1()">Copy Referral Id</button>
+                   
                     <script>
                     function myFunction1() {
                       var copyText = document.getElementById("username");
@@ -215,8 +217,11 @@
                     </script>
                     </div>
                 <div style="padding-left: 110px;padding-right: 110px;">
-                <button onclick="myFunction3()"   id="demobutton1" class="btn btn-block btn-custom"  style="padding: 10px;margin-top: 20px;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
-                <br> <p style="font-size: 10px;margin-left: -120px;">*Referral rewards can be claimed only after reaching Rs.200</p>
+                  
+                <button onclick="myFunction3()"   id="demobutton1" class="btn btn-block btn-custom"  style="padding: 10px;margin-top: 20px;" disabled>Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
+                <button id="hidebutton" class="btn btn-block btn-custom"  style="padding: 10px;margin-top: 20px;" ><a href="https://courses.microdegree.work/users/sign_in" >Sign In to get your referral id</a></button>    
+                <br> <p style="font-size: 10px;margin-left: -110px;">*Referral rewards can be claimed only after reaching Rs.200</p>
+                
                <script>                                               
                   function myFunction3() {                                                             
                     fetch("assets/images/agency/ref.jpeg")
@@ -293,7 +298,7 @@
                 <div class="roadmap" style="margin-top: -20px;">
                  
                  
-                  <div class="vl1" style="margin-top: 10px;"> </div>
+                  <div class="vl1" style="margin-top: 170px;"> </div>
                     <div class="point" style="margin-top: -215px;margin-left: -70px;">
                    
                     <div class="point-index">1</div>
@@ -315,8 +320,9 @@
                 </div>
              <center>
                <div style="margin-top: -40px;"></div>
-                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;text-align: center;color: #000;margin-left: -0px;height: 36px;" placeholder="Username1" type="name" id="username1"/> 
+                    <input style="border-left: 2px solid #623f99;background-color: #623f9923;text-align: center;color: #000;margin-left: -0px;height: 36px;" placeholder="Referral Id" type="name" id="username1"/> 
                     <button class="button2" onclick="myFunction2()" >Copy Referral Id</button>
+                 
                     <script>
                     function myFunction2() {
                       var copyText = document.getElementById("username1");
@@ -330,9 +336,10 @@
              
                   </br>
                   <div >
-                    <button onclick="myFunction4()"   id="demobutton" class="btn btn-block btn-custom" data-text="Open Project" style="padding: 10px;height: auto;">Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
-                    <br> <p style="font-size: 10px;margin-left: 0px;">*Referral rewards can be claimed only after reaching Rs.200</p>
-                        
+                    <button onclick="myFunction4()"   id="demobutton" class="btn btn-block btn-custom"  style="padding: 10px;margin-top: -10px;" disabled>Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
+                    <button id="hidebutton1" class="btn btn-block btn-custom"  style="padding: 10px;margin-top: 20px;" ><a href="https://courses.microdegree.work/users/sign_in" >Sign In to get your referral id</a></button>    
+                    <br> <p style="font-size: 10px;margin-left: -110px;">*Referral rewards can be claimed only after reaching Rs.200</p>
+                       
                     <script> 
                     function myFunction4() { 
       
@@ -374,7 +381,7 @@
             <img src="assets/images/agency/unnamed.png" style="margin-top: 0px;" />
         </div>
         <div class="col-lg-4">
-          <h2 style="font-weight: bold;">My Rewards</h2>
+          <h2 style="font-weight: bold;margin-left: -14px;">My Rewards</h2>
             
           <div class="tab1cards" style="margin-top: 20px;padding-left: 20px;padding-right: 20px;">
             <div class="card1">
@@ -397,6 +404,95 @@
 <br>
 
     </div>
+
+</div>
+</div>
+
+<div class="mobileHide">  
+  <h1 style="font-weight: bold;text-align: center;">How it works</h1>
+  <div class="site-content agency-site-content" style="padding-left: 300px;padding-right: 0px;">
+
+      <div>
+      <div class="row">
+          <div class="col-lg-4">
+             
+            
+
+              <img src="assets/images/agency/ref2.jpeg" style="height: 550px;margin-top: 20px;" class="img1" />
+              <h3 style="margin-top: 20px;">Share your referral id with your friend</h3>
+            
+            
+       
+      </div>
+      <div class="col-lg-2">
+        <img src="assets/images/agency/refarrow.png" style="height: 50px;margin-top: 410px;" />
+      </div>
+      <div class="col-lg-4" style="margin-left: -50px;">
+        <img src="assets/images/agency/ref1.jpeg" style="height: 550px;margin-top: 20px;" class="img1" />
+        <h3 style="margin-top: 20px;">Ask your friend to paste your referral id in payment page</h3>
+          </div>
+  </div>
+</div>
+
+  </div>
+
+</div>
+
+<!-- <div class="mobileShow">  
+  <div class="site-content agency-site-content" style="padding-left:10px;padding-right: 10px;">
+      <div>
+      <div class="row">
+          <div class="col-lg-4" style="text-align: center;">
+             
+            
+
+              <img src="assets/images/agency/ref2.jpeg" style="height: 400px;margin-top: 20px;" class="img1" />
+              <h3 style="margin-top: 20px;">Share your referral id with your friend</h3>
+            
+            
+       
+      </div>
+      <div class="col-lg-2">
+       
+      </div>
+      <div class="col-lg-4"  style="text-align: center;">
+        <img src="assets/images/agency/ref1.jpeg" style="height: 400px;margin-top: 20px;" class="img1" />
+        <h3 style="margin-top: 20px;">Ask your friend to paste your referral id in payment page</h3>
+          </div>
+  </div>
+</div>
+
+  </div>
+
+</div> -->
+
+<div class="mobileShow">  
+  <div class="site-content agency-site-content" style="padding-left:10px;padding-right: 10px;">
+    <h2 style="font-weight: bold;">How it works</h2>
+      <div>
+        
+      <div class="row">
+        
+          <div class="col-lg-4" style="text-align: center;">
+             
+            
+
+              <img src="assets/images/agency/ref4.png" style="margin-top: 10px;" class="img1" />
+             
+            
+            
+       
+      </div>
+      <div class="col-lg-2">
+       
+      </div>
+      <div class="col-lg-4"  style="text-align: center;">
+        
+          </div>
+  </div>
+</div>
+
+  </div>
 
 </div>
 </div>
@@ -707,15 +803,16 @@ width: 100%;
 padding: 20px;
 }
 }
-.vl {
+/* .vl {
 border-left: 2px dotted #623F99;
 height: 180px;
+position: static;
 
 }.vl1 {
 border-left: 2px dotted #623F99;
 height: 160px;
-
-}
+position: static;
+} */
 .button1 {
 background-color: #623F99; /* Green */
 border: none;
@@ -740,7 +837,11 @@ font-size: 10px;
 margin: 4px 2px;
 cursor: pointer;
 }
-
+.img1 {
+  border: 1px solid rgb(206, 206, 206);
+  border-radius: 5px;
+  padding: 10px;
+}
 
 </style>
    
@@ -777,20 +878,7 @@ cursor: pointer;
   // Set database variable
   var database = firebase.database()
   
-  function save() {
-  
-    var username = document.getElementById('username').value
-    var say_something = document.getElementById('say_something').value
-   
-  
-    database.ref('19D8uL8TFbb47Up_LBBND-zHlkZs4AS-p7i-oUJVm1aI/users/' + username).set({
-      username : username,
-      say_something : say_something,
-    
-    })
-  
-    alert('Saved')
-  }
+
   
   var getUrlParameter = function getUrlParameter(sParam) {
       var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -812,32 +900,13 @@ cursor: pointer;
        document.getElementById('username1').value = username;
   
   
-  function get() {
   
-      
-    var username = document.getElementById('username').value
-  
-    var user_ref = database.ref('19D8uL8TFbb47Up_LBBND-zHlkZs4AS-p7i-oUJVm1aI/users/' + username)
-    user_ref.on('value', function(snapshot) {
-      var data = snapshot.val()
-  
-      // alert(data.say_something)
-     
-      
-      document.getElementById("demo1").innerHTML = points;
-      document.getElementById("demo2").innerHTML = amount;
-      document.getElementById("demo3").innerHTML = points;
-      document.getElementById("demo4").innerHTML = amount;
-
-
-
-    })
-  
-  }
   
   window.onload = function(){
     
     var username = document.getElementById('username').value
+
+    
   
     var user_ref = database.ref('19D8uL8TFbb47Up_LBBND-zHlkZs4AS-p7i-oUJVm1aI/users/' + username)
     user_ref.on('value', function(snapshot) {
@@ -860,10 +929,27 @@ cursor: pointer;
       document.getElementById("demo3").innerHTML = + data3;
       document.getElementById("demo4").innerHTML = + data4;
 
-      
     
     })
+
+  
+    if(username == document.getElementById('username').value)
+    { 
+      document.getElementById('hidebutton').disabled = true;
+    document.getElementById('demobutton1').disabled = false;
+    document.getElementById("hidebutton").style.display = "none";
+    document.getElementById('hidebutton1').disabled = true;
+    document.getElementById('demobutton').disabled = false;
+    document.getElementById("hidebutton1").style.display = "none";
+
+    }
+  else {
+    
+    document.getElementById('hidebutton').disabled = false;
+    document.getElementById('demobutton1').disabled = true;
   }
+ 
+}
   
   </script>
      </body>

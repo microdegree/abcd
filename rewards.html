@@ -338,7 +338,7 @@
                   <div >
                     <button onclick="myFunction4()"   id="demobutton" class="btn btn-block btn-custom"  style="padding: 10px;margin-top: -10px;" disabled>Share <i class="fa fa-share-alt" aria-hidden="true"></i></button>                                               
                     <button id="hidebutton1" class="btn btn-block btn-custom"  style="padding: 10px;margin-top: 20px;" ><a href="https://courses.microdegree.work/users/sign_in" >Sign In to get your referral id</a></button>    
-                    <br> <p style="font-size: 10px;margin-left: -110px;">*Referral rewards can be claimed only after reaching Rs.200</p>
+                    <br> <p style="font-size: 10px;margin-left: 10px;">*Referral rewards can be claimed only after reaching Rs.200</p>
                        
                     <script> 
                     function myFunction4() { 
@@ -356,8 +356,6 @@
       
                           if (navigator.canShare && navigator.canShare(shareData)) {
       
-                          // Adding title afterwards as navigator.canShare just
-                          // takes files as input
                           shareData.title = "Name"
                           shareData.text = "Hi Friends\nI discovered MicroDegree where they teach coding in Kannada.\nI found it very useful in my placements.\nCheck out their offers!\n\nPlease use my referral id when you pay.\nIt will help me earn a referral bonus\n\nwebsite: https://courses.microdegree.work\n\nReferral Id : " +username 
                           navigator.share(shareData,shareData.text)
